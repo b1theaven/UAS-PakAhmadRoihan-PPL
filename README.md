@@ -79,37 +79,38 @@ Hasil pengujian menunjukkan bahwa bot berhasil melakukan moderasi otomatis, meng
 
 Dalam proyek pengembangan bot Discord ini, bahasa pemrograman yang dipilih adalah **JavaScript** yang dijalankan di lingkungan **Node.js**. Pemilihan JavaScript didasarkan pada karakteristik proyek yang membutuhkan pengolahan event-driven dan asynchronous, yang sangat cocok untuk aplikasi real-time seperti bot Discord. Keunggulan lain dari JavaScript adalah ekosistemnya yang kaya dengan pustaka dan modul, terutama **Discord.js**, yang secara khusus dirancang untuk memudahkan interaksi dengan API Discord. Hal ini memungkinkan pengembangan fitur-fitur seperti moderasi otomatis, pengelolaan peran, dan fitur interaktif lainnya dengan lebih cepat dan efisien.
 
-Platform pengembangan yang digunakan dalam proyek ini adalah aplikasi berbasis web yang berfungsi sebagai backend bot, yang kemudian diintegrasikan dengan server Discord untuk memberikan layanan secara real-time. Selama proses pengembangan, beberapa perangkat lunak pendukung juga digunakan, antara lain **Visual Studio Code** sebagai code editor, **Git** untuk version control, serta **Postman** untuk menguji endpoint API yang dikembangkan. Untuk database, platform seperti **MongoDB** digunakan untuk menyimpan data interaksi dan log aktivitas pengguna. Kombinasi teknologi dan perangkat lunak pendukung ini memastikan bahwa bot dapat beroperasi secara andal dan responsif sesuai dengan kebutuhan pengguna.
+Platform pengembangan yang digunakan dalam proyek ini adalah aplikasi berbasis web yang berfungsi sebagai backend bot, yang kemudian diintegrasikan dengan server Discord untuk memberikan layanan secara real-time. Selama proses pengembangan, beberapa perangkat lunak pendukung juga digunakan, antara lain **Visual Studio Code** sebagai code editor, **Git** untuk version control. Untuk database, platform seperti **MongoDB** digunakan untuk menyimpan data interaksi dan log aktivitas pengguna. Kombinasi teknologi dan perangkat lunak pendukung ini memastikan bahwa bot dapat beroperasi secara andal dan responsif sesuai dengan kebutuhan pengguna.
 
 ## Nomor 4: Skema dan Diagram
 
 ### Skema Hardware
 
 Hardware yang digunakan dalam perancangan bot Discord akan bergantung pada kebutuhan aplikasi bot dan skala penggunaannya. Berikut adalah poin-poin rinci kebutuhan hardware yang kami gunakan selama perancangan bot/aplikasi:
-• Hosting
-Disini kami menggunakan shared hosting alternatif yang gratisan untuk menjalankan bot-nya secara efisien dan mudah menggunakan https://bot-hosting.net/ , dimana sebagian besar kebutuhan hardware fisik dialihkan ke penyedia layanan hosting. Alasan kami memilih hosting ini selain gratis juga memiliki vCPU yang memadai untuk menjalankan Node.js dan menangani permintaan dari Discord API secara efisien. Hositng ini juga menawarkan bandwidth yang cukup untuk komunikasi real-time antara bot dan Discord API serta menjamin uptime yang tinggi sehingga bot dapat berjalan tanpa gangguan.Untuk pemilihan paketnya sendiri kami menggunakan paket yang standar dimana kami mendapatkan penggunaan vCPU sebanyak 25%, RAM sebanyak 512 MB, dan SSD sebanyak 2 GB.
-• Perangkat Pengembangan
-Laptop atau PC dengan spesifikasi standar (CPU minimal dual-core, RAM 4 GB, penyimpanan HDD/SSD) untuk pengembangan dan pengujian bot sebelum deployment.
-• Penyimpanan
-Minimal 5 GB untuk menyimpan kode bot, library, database lokal (jika diperlukan), dan file pendukung lainnya.
+
+- Hosting
+  Disini kami menggunakan shared hosting alternatif yang gratisan untuk menjalankan bot-nya secara efisien dan mudah menggunakan https://bot-hosting.net/ , dimana sebagian besar kebutuhan hardware fisik dialihkan ke penyedia layanan hosting. Alasan kami memilih hosting ini selain gratis juga memiliki vCPU yang memadai untuk menjalankan Node.js dan menangani permintaan dari Discord API secara efisien. Hositng ini juga menawarkan bandwidth yang cukup untuk komunikasi real-time antara bot dan Discord API serta menjamin uptime yang tinggi sehingga bot dapat berjalan tanpa gangguan.Untuk pemilihan paketnya sendiri kami menggunakan paket yang standar dimana kami mendapatkan penggunaan vCPU sebanyak 25%, RAM sebanyak 512 MB, dan SSD sebanyak 2 GB.
+- Perangkat Pengembangan
+  Laptop atau PC dengan spesifikasi standar (CPU minimal dual-core, RAM 4 GB, penyimpanan HDD/SSD) untuk pengembangan dan pengujian bot sebelum deployment.
+- Penyimpanan
+  Minimal 5 GB untuk menyimpan kode bot, library, database lokal (jika diperlukan), dan file pendukung lainnya.
 
 ### Skema Software
 
 Software memainkan peran penting dalam pengembangan dan operasional bot Discord. Berikut adalah rincian kebutuhan software yang biasa kami gunakan selama pengembangan:
-• Sistem Operasi
-Kami menggunakan OS Windows selama pengembangan karena sesuai dengan preferensi kami dan jenis hosting yang akan kami gunakan.
-• Runtime Environment
-Kami menggunakan Node.js sebagai runtime environment untuk menjalankan bot berbasis JavaScript. Versi yang kami gunakan adalah versi LTS terbaru untuk stabilitas.
-• Library dan Framework
 
-- Discord.js: Library utama yang kami gunakan untuk berinteraksi dengan Discord API, memungkinkan bot untuk menerima perintah, mengirim pesan, dan memodifikasi channel atau role.
-- Express.js: Untuk membuat API tambahan jika bot memerlukan antarmuka web atau endpoint HTTP.
-  • Database
+- Sistem Operasi
+  Kami menggunakan OS Windows selama pengembangan karena sesuai dengan preferensi kami dan jenis hosting yang akan kami gunakan.
+- Runtime Environment
+  Kami menggunakan Node.js sebagai runtime environment untuk menjalankan bot berbasis JavaScript. Versi yang kami gunakan adalah versi LTS terbaru untuk stabilitas.
+- Library dan Framework
+  - Discord.js: Library utama yang kami gunakan untuk berinteraksi dengan Discord API, memungkinkan bot untuk menerima perintah, mengirim pesan, dan memodifikasi channel atau role.
+  - Express.js: Untuk membuat API tambahan jika bot memerlukan antarmuka web atau endpoint HTTP.
+- Database
   Kami menggunakan MongoDB karena ini merupakan pilihan populer untuk database NoSQL yang cocok untuk menyimpan data leveling, role management, atau konfigurasi server.
-  • Alat Pengembangan
-- Code Editor: Kami menggunakan VSCode selama proses pengembangan karena VSCode merupakan editor teks yang ringan, cepat, dan fleksibel untuk pengembangan Node.js. VSCode juga mendukung banyak ekstensi yang kami butuhkan selama perancangan dan editor teks ini memang populer saat-saat ini yang paling sering digunakan.
-- Version Control System: Untuk version control dan kolaborasi pengembangan kami menggunakan GitHub untuk membuat eksprimen tanpa memengaruhi kode utama, dan juga fitur pull requests untuk memeriksa kode sebelum penggabungan.
-  • Security Tools
+- Alat Pengembangan
+  - Code Editor: Kami menggunakan VSCode selama proses pengembangan karena VSCode merupakan editor teks yang ringan, cepat, dan fleksibel untuk pengembangan Node.js. VSCode juga mendukung banyak ekstensi yang kami butuhkan selama perancangan dan editor teks ini memang populer saat-saat ini yang paling sering digunakan.
+  - Version Control System: Untuk version control dan kolaborasi pengembangan kami menggunakan GitHub untuk membuat eksprimen tanpa memengaruhi kode utama, dan juga fitur pull requests untuk memeriksa kode sebelum penggabungan.
+- Security Tools
   Untuk mengelola dan melindungi kredensial seperti token bot atau kunci API, serta keamanan tambahan untuk melindungi dari serangan eksternal kami menggunakan dotenv karena pilihan ini adalah yang paling mudah dan simpel namun sangat worth it.
 
 ### Skema Database
@@ -126,12 +127,12 @@ Pada skema ini, bot atau aplikasi yang kami buat menerima perintah dari user mel
 
 ## Nomor 5: Implementasi
 
-Dalam proses implementasi sistem bot Discord berbasis JavaScript, langkah awal adalah menyiapkan lingkungan kerja yang terdiri dari konfigurasi perangkat lunak, perangkat keras, dan database. Pertama, kami menginstal Node.js dan package manager (npm) pada komputer pengembang untuk memastikan semua dependensi dan library, seperti Discord.js, tersedia. Selanjutnya, kami menggunakan editor kode seperti Visual Studio Code dan melakukan setup version control dengan Git untuk mengelola perubahan kode. Di samping itu, kami menyiapkan akun di platform hosting (misalnya Heroku atau AWS) untuk deployment dan memastikan lingkungan server telah dikonfigurasi dengan benar. Persiapan ini juga mencakup pembuatan lingkungan pengujian lokal menggunakan emulator atau server Discord uji coba guna mensimulasikan interaksi pengguna.
+Dalam proses implementasi sistem bot Discord berbasis JavaScript, langkah awal adalah menyiapkan lingkungan kerja yang terdiri dari konfigurasi perangkat lunak, perangkat keras, dan database. Pertama, kami menginstal Node.js dan package manager (npm) pada komputer pengembang untuk memastikan semua dependensi dan library, seperti Discord.js, tersedia. Selanjutnya, kami menggunakan editor kode seperti Visual Studio Code dan melakukan setup version control dengan Git untuk mengelola perubahan kode. Di samping itu, kami menyiapkan akun di platform hosting untuk deployment dan memastikan lingkungan server telah dikonfigurasi dengan benar. Persiapan ini juga mencakup pembuatan lingkungan pengujian lokal menggunakan emulator atau server Discord uji coba guna mensimulasikan interaksi pengguna.
 
-Setelah lingkungan kerja siap, tahap implementasi dilanjutkan dengan penerapan komponen-komponen perangkat lunak sesuai desain. Pertama, kami mengembangkan modul-modul utama, seperti modul moderasi, pengelolaan peran, dan fitur interaktif, dengan mengacu pada spesifikasi dan diagram perancangan (misalnya, flowchart, ERD, dan class diagram). Di sisi backend, pengaturan database (misalnya MongoDB) dilakukan untuk menyimpan data log aktivitas, konfigurasi peran, dan statistik pengguna. Langkah selanjutnya melibatkan integrasi antara kode bot dan API Discord, sehingga setiap perintah yang dikirim melalui server Discord dapat diproses secara real-time. Pada akhirnya, kami melakukan pengujian terintegrasi untuk memastikan bahwa setiap komponen—software, hardware, dan database—berfungsi secara sinergis sesuai dengan desain yang telah ditetapkan. Dengan iterasi pengujian dan debugging, sistem disempurnakan hingga mencapai kinerja optimal sebelum akhirnya diterapkan ke lingkungan produksi.
+Setelah lingkungan kerja siap, tahap implementasi dilanjutkan dengan penerapan komponen-komponen perangkat lunak sesuai desain. Pertama, kami mengembangkan modul-modul utama, seperti modul moderasi, pengelolaan peran, dan fitur interaktif, dengan mengacu pada spesifikasi dan diagram perancangan (misalnya activity diagram, use case, dan class diagram). Di sisi backend, pengaturan database (misalnya MongoDB) dilakukan untuk menyimpan data log aktivitas, konfigurasi peran, dan statistik pengguna. Langkah selanjutnya melibatkan integrasi antara kode bot dan API Discord, sehingga setiap perintah yang dikirim melalui server Discord dapat diproses secara real-time. Pada akhirnya, kami melakukan pengujian terintegrasi untuk memastikan bahwa setiap komponen berfungsi secara sinergis sesuai dengan desain yang telah ditetapkan. Dengan iterasi pengujian dan debugging, sistem disempurnakan hingga mencapai kinerja optimal sebelum akhirnya diterapkan ke lingkungan produksi.
 
-![App Screenshot](https://ibb.co/gkN2rS1)
-![App Screenshot](https://ibb.co/N60chrf9)
-![App Screenshot](https://ibb.co/7J0d8CNd)
-![App Screenshot](https://ibb.co/Wv9Ykyy2)
-![App Screenshot](https://ibb.co/G32FydKb)
+![Screenshot 1](https://ibb.co/gkN2rS1)
+![Screenshot 2](https://ibb.co/N60chrf9)
+![Screenshot 3](https://ibb.co/7J0d8CNd)
+![Screenshot 4](https://ibb.co/Wv9Ykyy2)
+![Screenshot 5](https://ibb.co/G32FydKb)
