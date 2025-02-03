@@ -1,185 +1,137 @@
-# Discord Bot Project
+# Perancangan Perangkat Lunak UAS
 
-## 🎉 Overview
+## Nomor 1: Permasalahan
 
-**Discord Bot Project** adalah bot Discord yang dirancang untuk memberikan berbagai fitur menarik, seperti manajemen server, permainan interaktif, leveling sistem, dan banyak lagi! Bot ini dikembangkan menggunakan **Node.js** dengan library **Discord.js v13** untuk memberikan pengalaman terbaik bagi pengguna.
+### **Permasalahan dalam Proyek Perangkat Lunak**
 
----
-
-## 🎯 Features
-
-1. **Utility and Management**
-
-   - **AFK Notification**: Mengaktifkan status _Away From Keyboard_ (AFK) dengan pemberitahuan otomatis saat user disebutkan.
-   - **Backup Server**: Menyimpan cadangan konfigurasi server Anda.
-   - **Clear Messages**: Membersihkan pesan dalam jumlah besar di channel.
-   - **Role Management**: Mendukung custom role untuk _Server Booster_ dengan opsi membuat, mengedit, dan membagikannya ke pengguna lain.
-   - **Reminder System**: Menyediakan pengingat berbasis waktu untuk user melalui DM atau channel tertentu.
-   - **Audit Log**: Melacak aktivitas penting di server untuk keperluan administrasi.
-
-2. **Moderation Tools**
-
-   - **Ban and Kick**: Memungkinkan admin untuk melarang atau mengeluarkan user dari server.
-   - **Blacklist**: Memblokir user atau kata tertentu untuk menjaga lingkungan server tetap aman.
-   - **Automoderation**: Memblokir kata kotor, spam mention, dan konten yang tidak diinginkan secara otomatis.
-
-3. **Fun and Interactive**
-
-   - **GIF Commands**: Berbagai perintah seperti `slap`, `hug`, `cuddle`, dan `kiss` untuk berbagi GIF anime dengan user lain.
-   - **Confession System**: Mengirimkan pesan anonim ke channel tertentu.
-   - **Search and Discovery**: Mendukung pencarian aplikasi, game, video YouTube, gambar Pinterest, dan lainnya.
-   - **Giveaway**: Fitur undian interaktif untuk melibatkan komunitas.
-
-4. **Information and Tools**
-
-   - **User and Server Insights**: Menampilkan avatar, statistik server, dan informasi user secara mendetail.
-   - **World Clock**: Melihat waktu di berbagai belahan dunia.
-   - **NASA Picture of the Day**: Menampilkan foto luar angkasa dari NASA.
-   - **Lyrics Search**: Mencari lirik lagu dengan cepat.
-   - **Radio Streaming**: Mendukung pemutaran radio langsung di voice channel.
-
-5. **Leveling and Leaderboard**
-
-   - **Levelling System**: Memberikan XP dan level untuk aktivitas user dengan role sebagai hadiah.
-   - **Leaderboard**: Menampilkan daftar pengguna dengan pesan, undangan, atau level terbanyak.
-
-6. **Customization**
-
-   - **Prefix Customization**: Mengubah prefix perintah sesuai preferensi server.
-   - **Language Support**: Mengatur bahasa bot untuk pengalaman yang lebih personal.
-
-7. **Advanced Integrations**
-
-   - **LastFM Integration**: Melihat musik yang sedang Anda dengarkan, artis favorit, dan banyak lagi.
-   - **AI Tools**: Menghasilkan gambar menggunakan teknologi AI.
-   - **YouTube Integration**: Mengonversi video YouTube ke MP3 atau menampilkan statistik kanal.
-
-8. **Others**
-   - **Automatic Voice Channels**: Membuat dan mengatur voice channel secara otomatis.
-   - **Ticketing System**: Membantu admin mengelola permintaan bantuan dari user.
-   - **Anti-Crash System**: Menjamin stabilitas bot dengan mencegah crash akibat error.
+Dalam pengelolaan komunitas Discord, banyak server menghadapi tantangan dalam moderasi, pengelolaan peran, serta interaksi anggota. Administrator sering kali harus menangani pelanggaran aturan secara manual, mengatur role pengguna satu per satu, dan menjaga keterlibatan anggota agar komunitas tetap aktif. Proses ini tidak hanya memakan waktu tetapi juga rentan terhadap kesalahan manusia. Selain itu, kurangnya sistem otomatisasi membuat komunitas sulit berkembang secara efektif, terutama dalam komunitas besar dengan ribuan anggota.
 
 ---
 
-## 💠 Diagrams
+### **Analisis Penyebab Utama Permasalahan**
 
-- **Class Diagram**: [Klik disini untuk melihat.](https://media.discordapp.net/attachments/909990115466682420/1330755600354644058/image.png?ex=678f223b&is=678dd0bb&hm=0b0c6ca598c4c047dbde38ddad4cae9460dc7b410b28ef1570ae23d4ac5a3124&=&format=webp&quality=lossless&width=477&height=463)
-- **Sequence Diagram**: [Klik disini untuk melihat.](https://media.discordapp.net/attachments/909990115466682420/1330757700308701194/image.png?ex=678f2430&is=678dd2b0&hm=c0a2f4eb858bd1068e23efbc4cd2a25271a31297ee860009002732dbe8ceccd6&=&format=webp&quality=lossless)
-- **Activity Diagram**: [Klik disini untuk melihat.](https://media.discordapp.net/attachments/909990115466682420/1330757826339143810/image.png?ex=678f244e&is=678dd2ce&hm=10370cbac4df241ad450119bef396d5946002572e3064e534a8dbacecba69ee9&=&format=webp&quality=lossless&width=315&height=463)
-- **Use Case Diagram**: [Klik disini untuk melihat.](https://media.discordapp.net/attachments/909990115466682420/1330758104970952786/image.png?ex=678f2490&is=678dd310&hm=bb9cad0f6c5b4c6a9aa6d9e1f27cb462a841ece5becc2f1dd6c17ce1b91165f4&=&format=webp&quality=lossless&width=518&height=463)
+1. **Moderasi Manual yang Tidak Efisien**  
+   Moderasi yang dilakukan secara manual menyebabkan admin harus terus memantau aktivitas anggota, menangani spam, serta menegakkan aturan komunitas. Ini meningkatkan beban kerja dan risiko kelalaian, terutama jika jumlah anggota sangat besar.
 
----
+2. **Pengelolaan Role yang Lambat dan Tidak Terorganisir**  
+   Dalam komunitas besar, mengelola role berdasarkan aktivitas atau status anggota memerlukan waktu dan usaha yang signifikan. Tanpa sistem otomatisasi, admin harus menetapkan atau mencabut role secara manual, yang dapat menyebabkan keterlambatan atau ketidakkonsistenan dalam struktur komunitas.
 
-## 🛠️ Technologies Used
-
-- **Node.js**: Lingkungan runtime JavaScript.
-- **Discord.js v13**: Library utama untuk interaksi dengan Discord API.
-- **MongoDB**: Database untuk menyimpan data pengguna, leveling, dan konfigurasi server.
-- **npm**: Untuk mengelola dependensi proyek.
+3. **Kurangnya Interaksi dan Keterlibatan Anggota**  
+   Jika tidak ada fitur yang menarik, komunitas cenderung menjadi pasif dan kurang interaktif. Anggota hanya bergabung tanpa adanya motivasi untuk berpartisipasi dalam diskusi atau kegiatan komunitas.
 
 ---
 
-## 📋 Prerequisites
+### **Dampak Permasalahan terhadap Pengguna dan Sistem**
 
-Sebelum menjalankan proyek ini, pastikan Anda telah menginstal:
-
-- **Node.js**: [Download Node.js](https://nodejs.org/)
-- **npm**: Sudah termasuk dalam instalasi Node.js.
-- **MongoDB**: Untuk menyimpan data secara persisten.
-
----
-
-## ⚙️ Installation
-
-1. Clone repositori ini ke komputer Anda:
-
-   ```bash
-   git clone https://github.com/yourusername/your-repo-name.git
-   cd your-repo-name
-
-   ```
-
-2. Instal dependensi yang diperlukan:
-
-   ```bash
-   npm install
-
-   ```
-
-3. Buat file `.env` untuk menyimpan token bot dan URI database:
-
-   ```bash
-   DISCORD_TOKEN=your-discord-bot-token
-   MONGO_URI=your-mongodb-uri
-
-   ```
-
-4. Jalankan bot:
-   ```bash
-   node index.js
-   ```
+- **Beban Kerja yang Tinggi**  
+  Admin dan moderator harus menghabiskan banyak waktu untuk tugas-tugas rutin yang bisa diotomatisasi, sehingga mengurangi efisiensi pengelolaan komunitas.
+- **Kualitas Moderasi yang Tidak Konsisten**  
+  Karena bersifat manual, keputusan yang dibuat oleh admin bisa bervariasi, menyebabkan aturan komunitas diterapkan secara tidak konsisten.
+- **Penurunan Aktivitas Anggota**  
+  Tanpa sistem interaksi yang baik, anggota cenderung pasif, menyebabkan komunitas kurang berkembang dan kehilangan daya tariknya.
 
 ---
 
-## 📜 Usage
+### **Solusi yang Dapat Diterapkan dengan Perangkat Lunak**
 
-1. Tambahkan bot ke server Anda:
+1. **Bot Moderasi Otomatis**  
+   Bot akan memantau aktivitas anggota, mendeteksi spam, menyaring kata-kata kasar, serta mengambil tindakan otomatis seperti memberi peringatan atau melakukan mute/kick/ban jika diperlukan.
 
-- Gunakan link OAuth2 yang dihasilkan di [Discord Developer Portal](https://discord.com/developers/applications).
+2. **Sistem Pengelolaan Role Otomatis**  
+   Pengguna akan diberikan atau dicabut role-nya secara otomatis berdasarkan aktivitas mereka, misalnya, memberikan peran khusus bagi anggota yang sering berkontribusi dalam diskusi.
 
-2. Gunakan perintah berikut:
-
-- `a.help`: Melihat daftar perintah yang tersedia.
-- `a.ping`: Mengecek latensi bot.
-- `a.level`: Melihat level Anda di server.
-
-3. Akses panel admin untuk konfigurasi tambahan (jika tersedia).
-
----
-
-## 🤝 Contributing
-
-Kami menyambut kontribusi dari siapa saja! Jika Anda memiliki ide atau menemukan bug:
-
-1. Fork repositori ini.
-2. Buat branch baru untuk perubahan Anda:
-   ```bash
-   git checkout -b feature-branch-name
-   ```
-3. Commit perubahan Anda:
-   ```bash
-   git commit -m "Add new feature/fix bug"
-   ```
-4. Push branch Anda:
-   ```bash
-   git push origin feature-branch-name
-   ```
-5. Buat Pull Request di GitHub.
+3. **Fitur Interaktif untuk Meningkatkan Keterlibatan**
+   - Permainan berbasis teks atau kuis komunitas.
+   - Pengingat acara dan sistem polling otomatis.
+   - Pemberian hadiah atau badge bagi anggota aktif untuk meningkatkan partisipasi.
 
 ---
 
-## 🐛 Known Issues
+### **Bagaimana Solusi Ini Memenuhi Kebutuhan Pengguna**
 
-- **Command timeout**: Beberapa perintah mungkin membutuhkan waktu lebih lama dari yang diharapkan. Kami sedang mengoptimalkan performa.
-- **Compatibility**: Bot ini hanya mendukung Discord.js v13 ke atas.
+- **Efisiensi dan Otomatisasi**  
+  Dengan bot yang menangani moderasi dan manajemen role, admin dapat lebih fokus pada pengembangan komunitas tanpa harus menangani tugas rutin secara manual.
+- **Pengelolaan Komunitas yang Lebih Terstruktur**  
+  Penerapan sistem otomatisasi memastikan role dan aturan komunitas diterapkan secara konsisten.
+- **Meningkatkan Aktivitas dan Partisipasi Anggota**  
+  Dengan fitur interaktif yang menarik, anggota lebih termotivasi untuk tetap aktif di komunitas, meningkatkan interaksi dan memperkuat hubungan antaranggota.
 
-## 📞 Support
-
-Jika Anda memiliki pertanyaan atau memerlukan bantuan, hubungi kami melalui:
-
-- Email: mohammadrizky881@gmail.com
-- Discord: [Join Support Server](https://discord.gg/J4rBuvHskq)
-
----
-
-## 📜 License
-
-Proyek ini dilisensikan di bawah [MIT License](https://github.com/b1theaven/Discord-Bot/blob/main/LICENSE).
+Dengan solusi ini, sistem yang dikembangkan akan menciptakan komunitas Discord yang lebih efisien, menarik, dan mudah dikelola.
 
 ---
 
-## 🎉 Acknowledgements
+## Nomor 2: Pengujian
 
-- **Discord.js**: Untuk library yang luar biasa.
-- **MongoDB**: Untuk database yang andal.
-- **Komunitas Discord**: Untuk inspirasi dan ide fitur.
+Dalam pengujian perangkat lunak untuk bot Discord berbasis JavaScript ini, kami menerapkan kombinasi metode pengujian black box dan white box guna memastikan semua fungsi berjalan sesuai harapan. Pengujian black box dilakukan dengan menguji antarmuka dan fungsionalitas bot tanpa melihat struktur internal kodenya. Misalnya, dalam pengujian ini, kami mengirim perintah melalui chat Discord untuk memverifikasi respons bot, seperti penghapusan pesan spam, pemberian role otomatis, dan penyampaian notifikasi acara. Sementara itu, metode white box testing melibatkan pengujian kode secara mendalam, seperti unit testing dan code coverage, untuk memastikan setiap modul dan fungsi internal beroperasi dengan benar. Dengan demikian, kedua metode ini saling melengkapi untuk mengidentifikasi bug, inkonsistensi, dan area yang perlu perbaikan.
+
+Jenis pengujian yang diterapkan meliputi:
+
+- **Unit Testing:** Menguji fungsi-fungsi individual, seperti fungsi moderasi dan manajemen role, untuk memastikan logika bisnis berfungsi sebagaimana mestinya.
+- **Integration Testing:** Memastikan modul-modul yang berbeda, misalnya interaksi antara modul moderasi dan pengelolaan role, bekerja secara harmonis.
+- **Functional Testing (Black Box):** Memverifikasi bahwa semua perintah dan fitur interaktif (seperti kuis atau polling) menghasilkan output yang sesuai dengan spesifikasi.
+- **System Testing:** Menguji keseluruhan sistem pada lingkungan server Discord yang sebenarnya untuk menilai performa dan kestabilan dalam kondisi nyata.
+
+Hasil pengujian menunjukkan bahwa bot berhasil melakukan moderasi otomatis, mengelola role anggota dengan konsisten, dan menyediakan fitur interaktif tanpa adanya error kritis. Beberapa bug minor yang muncul selama unit testing berhasil diperbaiki melalui iterasi perbaikan kode, sementara integrasi antara modul diuji kembali hingga mencapai kinerja optimal. Kesimpulan dari pengujian ini adalah bahwa perangkat lunak telah memenuhi spesifikasi fungsional dan non-fungsional yang telah ditetapkan, sehingga bot dapat diimplementasikan dalam lingkungan komunitas Discord dengan keandalan tinggi dan responsivitas yang baik.
+
+---
+
+## Nomor 3: Bahasa Pemrograman
+
+Dalam proyek pengembangan bot Discord ini, bahasa pemrograman yang dipilih adalah **JavaScript** yang dijalankan di lingkungan **Node.js**. Pemilihan JavaScript didasarkan pada karakteristik proyek yang membutuhkan pengolahan event-driven dan asynchronous, yang sangat cocok untuk aplikasi real-time seperti bot Discord. Keunggulan lain dari JavaScript adalah ekosistemnya yang kaya dengan pustaka dan modul, terutama **Discord.js**, yang secara khusus dirancang untuk memudahkan interaksi dengan API Discord. Hal ini memungkinkan pengembangan fitur-fitur seperti moderasi otomatis, pengelolaan peran, dan fitur interaktif lainnya dengan lebih cepat dan efisien.
+
+Platform pengembangan yang digunakan dalam proyek ini adalah aplikasi berbasis web yang berfungsi sebagai backend bot, yang kemudian diintegrasikan dengan server Discord untuk memberikan layanan secara real-time. Selama proses pengembangan, beberapa perangkat lunak pendukung juga digunakan, antara lain **Visual Studio Code** sebagai code editor, **Git** untuk version control, serta **Postman** untuk menguji endpoint API yang dikembangkan. Untuk database, platform seperti **MongoDB** digunakan untuk menyimpan data interaksi dan log aktivitas pengguna. Kombinasi teknologi dan perangkat lunak pendukung ini memastikan bahwa bot dapat beroperasi secara andal dan responsif sesuai dengan kebutuhan pengguna.
+
+## Nomor 4: Skema dan Diagram
+
+### Skema Hardware
+
+Hardware yang digunakan dalam perancangan bot Discord akan bergantung pada kebutuhan aplikasi bot dan skala penggunaannya. Berikut adalah poin-poin rinci kebutuhan hardware yang kami gunakan selama perancangan bot/aplikasi:
+• Hosting
+Disini kami menggunakan shared hosting alternatif yang gratisan untuk menjalankan bot-nya secara efisien dan mudah menggunakan https://bot-hosting.net/ , dimana sebagian besar kebutuhan hardware fisik dialihkan ke penyedia layanan hosting. Alasan kami memilih hosting ini selain gratis juga memiliki vCPU yang memadai untuk menjalankan Node.js dan menangani permintaan dari Discord API secara efisien. Hositng ini juga menawarkan bandwidth yang cukup untuk komunikasi real-time antara bot dan Discord API serta menjamin uptime yang tinggi sehingga bot dapat berjalan tanpa gangguan.Untuk pemilihan paketnya sendiri kami menggunakan paket yang standar dimana kami mendapatkan penggunaan vCPU sebanyak 25%, RAM sebanyak 512 MB, dan SSD sebanyak 2 GB.
+• Perangkat Pengembangan
+Laptop atau PC dengan spesifikasi standar (CPU minimal dual-core, RAM 4 GB, penyimpanan HDD/SSD) untuk pengembangan dan pengujian bot sebelum deployment.
+• Penyimpanan
+Minimal 5 GB untuk menyimpan kode bot, library, database lokal (jika diperlukan), dan file pendukung lainnya.
+
+### Skema Software
+
+Software memainkan peran penting dalam pengembangan dan operasional bot Discord. Berikut adalah rincian kebutuhan software yang biasa kami gunakan selama pengembangan:
+• Sistem Operasi
+Kami menggunakan OS Windows selama pengembangan karena sesuai dengan preferensi kami dan jenis hosting yang akan kami gunakan.
+• Runtime Environment
+Kami menggunakan Node.js sebagai runtime environment untuk menjalankan bot berbasis JavaScript. Versi yang kami gunakan adalah versi LTS terbaru untuk stabilitas.
+• Library dan Framework
+
+- Discord.js: Library utama yang kami gunakan untuk berinteraksi dengan Discord API, memungkinkan bot untuk menerima perintah, mengirim pesan, dan memodifikasi channel atau role.
+- Express.js: Untuk membuat API tambahan jika bot memerlukan antarmuka web atau endpoint HTTP.
+  • Database
+  Kami menggunakan MongoDB karena ini merupakan pilihan populer untuk database NoSQL yang cocok untuk menyimpan data leveling, role management, atau konfigurasi server.
+  • Alat Pengembangan
+- Code Editor: Kami menggunakan VSCode selama proses pengembangan karena VSCode merupakan editor teks yang ringan, cepat, dan fleksibel untuk pengembangan Node.js. VSCode juga mendukung banyak ekstensi yang kami butuhkan selama perancangan dan editor teks ini memang populer saat-saat ini yang paling sering digunakan.
+- Version Control System: Untuk version control dan kolaborasi pengembangan kami menggunakan GitHub untuk membuat eksprimen tanpa memengaruhi kode utama, dan juga fitur pull requests untuk memeriksa kode sebelum penggabungan.
+  • Security Tools
+  Untuk mengelola dan melindungi kredensial seperti token bot atau kunci API, serta keamanan tambahan untuk melindungi dari serangan eksternal kami menggunakan dotenv karena pilihan ini adalah yang paling mudah dan simpel namun sangat worth it.
+
+### Skema Database
+
+Pada skema ini, bot atau aplikasi yang kami buat menerima perintah dari user melalui metode sendCommand dan user menerima respon melalui receiveResponse. Sedangkan bot bergantung pada database untuk berbagai operasi seperti menyimpan log aktivitas, mengambil data pengguna, atau memperbarui data server. Database juga menyimpan atribut-atribut yang dimiliki user yang kalian bisa lihat sendiri [disini](https://ibb.co/pvtzDKKr).
+
+### Skema Actor
+
+- **Sequence Diagram**: [Klik disini untuk melihat.](https://ibb.co/Zp9yVGBN)
+- **Activity Diagram**: [Klik disini untuk melihat.](https://ibb.co/NgTZR8Cj)
+- **Use Case Diagram**: [Klik disini untuk melihat.](https://ibb.co/xtkCMGM6)
+
+---
+
+## Nomor 5: Implementasi
+
+Dalam proses implementasi sistem bot Discord berbasis JavaScript, langkah awal adalah menyiapkan lingkungan kerja yang terdiri dari konfigurasi perangkat lunak, perangkat keras, dan database. Pertama, kami menginstal Node.js dan package manager (npm) pada komputer pengembang untuk memastikan semua dependensi dan library, seperti Discord.js, tersedia. Selanjutnya, kami menggunakan editor kode seperti Visual Studio Code dan melakukan setup version control dengan Git untuk mengelola perubahan kode. Di samping itu, kami menyiapkan akun di platform hosting (misalnya Heroku atau AWS) untuk deployment dan memastikan lingkungan server telah dikonfigurasi dengan benar. Persiapan ini juga mencakup pembuatan lingkungan pengujian lokal menggunakan emulator atau server Discord uji coba guna mensimulasikan interaksi pengguna.
+
+Setelah lingkungan kerja siap, tahap implementasi dilanjutkan dengan penerapan komponen-komponen perangkat lunak sesuai desain. Pertama, kami mengembangkan modul-modul utama, seperti modul moderasi, pengelolaan peran, dan fitur interaktif, dengan mengacu pada spesifikasi dan diagram perancangan (misalnya, flowchart, ERD, dan class diagram). Di sisi backend, pengaturan database (misalnya MongoDB) dilakukan untuk menyimpan data log aktivitas, konfigurasi peran, dan statistik pengguna. Langkah selanjutnya melibatkan integrasi antara kode bot dan API Discord, sehingga setiap perintah yang dikirim melalui server Discord dapat diproses secara real-time. Pada akhirnya, kami melakukan pengujian terintegrasi untuk memastikan bahwa setiap komponen—software, hardware, dan database—berfungsi secara sinergis sesuai dengan desain yang telah ditetapkan. Dengan iterasi pengujian dan debugging, sistem disempurnakan hingga mencapai kinerja optimal sebelum akhirnya diterapkan ke lingkungan produksi.
+
+![App Screenshot](https://ibb.co/gkN2rS1)
+![App Screenshot](https://ibb.co/N60chrf9)
+![App Screenshot](https://ibb.co/7J0d8CNd)
+![App Screenshot](https://ibb.co/Wv9Ykyy2)
+![App Screenshot](https://ibb.co/G32FydKb)
