@@ -124,8 +124,8 @@ Dalam proses implementasi sistem bot Discord berbasis JavaScript, langkah awal a
 
 Setelah lingkungan kerja siap, tahap implementasi dilanjutkan dengan penerapan komponen-komponen perangkat lunak sesuai desain. Pertama, kami mengembangkan modul-modul utama, seperti modul moderasi, pengelolaan peran, dan fitur interaktif, dengan mengacu pada spesifikasi dan diagram perancangan (misalnya activity diagram, use case, dan class diagram). Di sisi backend, pengaturan database (misalnya MongoDB) dilakukan untuk menyimpan data log aktivitas, konfigurasi peran, dan statistik pengguna. Langkah selanjutnya melibatkan integrasi antara kode bot dan API Discord, sehingga setiap perintah yang dikirim melalui server Discord dapat diproses secara real-time. Pada akhirnya, kami melakukan pengujian terintegrasi untuk memastikan bahwa setiap komponen berfungsi secara sinergis sesuai dengan desain yang telah ditetapkan. Dengan iterasi pengujian dan debugging, sistem disempurnakan hingga mencapai kinerja optimal sebelum akhirnya diterapkan ke lingkungan produksi.
 
-[Screenshot 1](https://ibb.co/gkN2rS1)
-[Screenshot 2](https://ibb.co/N60chrf9)
-[Screenshot 3](https://ibb.co/7J0d8CNd)
-[Screenshot 4](https://ibb.co/Wv9Ykyy2)
-[Screenshot 5](https://ibb.co/G32FydKb)
+![Screenshot 1](https://media.discordapp.net/attachments/909990115466682420/1335978041326960661/P1.png?ex=67a22202&is=67a0d082&hm=f56f71845cd9331e96c86ff1930cd6a5de197550518aa6cef56e5badf3f9c661&=&format=webp&quality=lossless)
+![Screenshot 2](https://media.discordapp.net/attachments/909990115466682420/1335978041603653642/P2.png?ex=67a22202&is=67a0d082&hm=30d8a0cbb538a19e24378eda3574483d1ef9e2d907c35c81d61029ff1eb7e87b&=&format=webp&quality=lossless)
+![Screenshot 3](https://media.discordapp.net/attachments/909990115466682420/1335978041892933673/P3.png?ex=67a22202&is=67a0d082&hm=ed5f4b025247667d56de56f283222f3acc22bd6163a5b5c1c7bd1e112b5da2b8&=&format=webp&quality=lossless)
+![Screenshot 4](https://media.discordapp.net/attachments/909990115466682420/1335978042157432942/P4.png?ex=67a22202&is=67a0d082&hm=33f47b648a6eb89456ad396da41199370e5adc26130fa2d1c4d5bcc0de961b26&=&format=webp&quality=lossless)
+![Screenshot 5](https://media.discordapp.net/attachments/909990115466682420/1335978042383798282/P5.png?ex=67a22202&is=67a0d082&hm=6624368471d739ede643c8046d9de2ac24eff8814de9b6c97a92017d6ee6c595&=&format=webp&quality=lossless)
